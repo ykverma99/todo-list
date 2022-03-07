@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style>
+        .todo-container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .todo-list{
+            width: 220px;
+            height: 34px;
+            list-style: none;
+            padding: 0.3em;
+            margin: 0.5rem 0;
+            background: linear-gradient(to top right, rgb(184, 224, 184),rgb(247, 247, 116));
+        }
+        .check-button{
+            padding: 0 0.5rem;
+            background: rgb(71, 230, 42);    
+            margin: 0.5rem 0;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .check-button:hover{
+            background-color: rgba(70, 230, 42, 0.794);
+        }
+        .trash-button{
+            background: rgb(238, 39, 39);
+            padding: 0 0.5rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+        }
+        .trash-button:hover{
+            background-color: rgba(238, 39, 39, 0.753);
+        }
+        .trash-button img{
+            pointer-events: none;
+        }
+        .check-button img{
+            pointer-events: none;
+        }
+        .complited{
+            opacity: 0.8;
+            text-decoration: line-through;
+        }
+        .remove{
+            transition: all 0.5s ease;
+            transform: translateY(29px) rotateZ(12deg);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="h-screen w-full bg-gradient-to-tr from-gray-800 to-gray-500">
+            <div class="flex flex-col justify-center items-center gap-11 h-3/4">
+                <header>
+                    <h1 class=" text-white text-8xl font-extrabold font-mono tracking-wide">Todo-List</h1>
+                </header>
+                <form id="form" class="flex gap-1">
+                    <input type="text" id="input" placeholder="Type here" class="h-9 p-1 rounded-sm drop-shadow-xl">
+                    <button id="button" class="h-9 bg-slate-400 flex items-center drop-shadow-xl rounded-md"><img src="./images/plus-square.svg"  alt="Icon of PLus" class="pointer-events-none w-full p-3"></button>
+                    <select class=" rounded mx-1 bg-white" name="option" id="select">
+                        <option value="All">All</option>
+                        <option value="Check">Check</option>
+                        <option value="UnCheck">Un Check</option>
+                    </select>
+                </form>
+                <div id="todo-container" class="flex flex-col justify-center items-center"></div>
+            </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
